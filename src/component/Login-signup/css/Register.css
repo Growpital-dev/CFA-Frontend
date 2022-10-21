@@ -1,0 +1,146 @@
+body {
+    background-color: var(--darkBackground);
+}
+
+.register {
+    background-color: var(--darkBackground);
+    /* height: ; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.register p {
+    font-size: 25px;
+    padding: 0.6rem 0;
+    color: white;
+}
+
+.greet {
+    font-weight: 700;
+}
+
+.register p a {
+    color: white;
+}
+
+.register p a:hover {
+    color: #0777cd;
+}
+
+.register-component {
+    background: var(--lightBackground);
+    border: 1px solid var(--lightBackground);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    align-items: center;
+    padding: 2rem 0;
+    row-gap: 1rem;
+}
+
+h1 {
+    color: white;
+}
+
+.register-input {
+    width: 18rem;
+}
+
+.register-input label {
+    color: white;
+    font-size: 18px;
+}
+
+.register-input input {
+    width: 100%;
+    padding-left: 1rem;
+    outline: none;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0.2rem;
+    font-size: 18px;
+}
+
+.register-input input:focus {
+    border: 2px solid var(--darkBlue);
+}
+
+.btn {
+    width: 19rem;
+    background-color: white;
+    border: 2px solid var(--darkBlue);
+    border-radius: 10px;
+    height: 2rem;
+    font-family: "Segoe UI";
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkBlue);
+    transition: 0.2s all ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--darkBlue);
+    color: white;
+}
+
+@media screen and (max-width:500px) {
+    .register-component {
+        width: 80%;
+    }
+
+    .register-input input {
+        /* width: 80%; */
+    }
+
+    .register-input {
+        width: 14rem;
+    }
+
+    .register {
+        margin-top: 0;
+    }
+
+    .register-component {
+        row-gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    .btn {
+        width: 15rem;
+    }
+
+    .signup-component h1 {
+        font-size: 2rem;
+    }
+
+    #incorrect-creds {
+
+        font-size: 0.8rem !important;
+    }
+}
+
+.logOrSign {
+    cursor: pointer;
+    font-size: 1rem !important;
+    text-decoration: underline;
+    transition: 0.3s all ease-in-out;
+}
+
+.logOrSign:hover {
+    color: var(--darkBlue);
+}
+
+#incorrect-creds {
+    color: red;
+    font-size: 1rem;
+
+}
