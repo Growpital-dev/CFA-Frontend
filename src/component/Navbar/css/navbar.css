@@ -130,7 +130,7 @@ body {
     z-index: 1000000000000000;
     display: none;
     position: fixed;
-    height: 110vh;
+    height: 100vh;
     width: 110vw;
     top: 0;
     background-color: var(--darkBackground);
