@@ -17,7 +17,7 @@ const MainNavbar = () => {
                     <li onClick={()=>{navigate("/dashboard");setIsnavOpen(false)}}>Dashboard</li>
                     <li onClick={()=>{navigate("/newInvestment");setIsnavOpen(false)}}>New Investment</li>
                     <li>My Investments</li>
-                    <li>Wallet</li>
+                    <li onClick={()=>{navigate("/wallet");setIsnavOpen(false)}}>Wallet</li>
                     <li onClick={()=>{navigate("/contactUs");setIsnavOpen(false)}}>Contact Us</li>
                     <li onClick={()=>{navigate("/profile");setIsnavOpen(false)}}>Profile</li>
                 </ul>
@@ -31,10 +31,10 @@ const MainNavbar = () => {
                     <li onClick={()=>{navigate("/dashboard")}}>Dashboard</li>
                     <li onClick={()=>{navigate("/newInvestment");setIsnavOpen(false)}}>New Investment</li>
                     <li>My Investments</li>
-                    <li>Wallet</li>
+                    <li onClick={()=>{navigate("/wallet");setIsnavOpen(false)}}>Wallet</li>
                     <li onClick={()=>{navigate("/contactUs");setIsnavOpen(false)}}>Contact Us</li>
                     <li className='profile-link'>
-                        {/* <div className="avatar"></div> */}
+                  
                         <p className="profile-name" onClick={()=>{navigate("/profile");setIsnavOpen(false)}} >Jhon Doe</p>
                         
                     </li>

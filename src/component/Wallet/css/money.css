@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 20px 25px;
+    width: 22rem;
+    background-color: #353535;
+}
+label{
+    font-size: 18px;
+    padding-bottom: 0.6rem;
+    color: white;
+    font-family: 'Segoe UI';
+}
+input{
+    margin-bottom: 0.6rem;
+}
+h2{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Segoe UI';
+    color: white;
+}
+.btn{
+    margin-top: 0.8rem;
+    border-radius: 18px;
+    font-weight: 600;
+    color: #FFA217;
+    border: 3px solid #FFA217;
+}
+.top{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.close{
+    width: 20px;
+    align-self: flex-end;
+}
+.accountInput{
+    display: flex;
+}
+.lock{
+    position: fixed;
+    width: 35px;
+    padding: 3px 4px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 400px){
+    .container{
+        padding: 16px 20px;
+    width: 18rem;
+    }
+    label{
+        font-size: 16px;
+        padding-bottom: 0.2rem;
+    }
+    input{
+        margin-bottom: 0.2rem;
+    }
+}
+@media only screen and (max-width: 305px){
+    .container{
+        padding: 16px 20px;
+    width: 15rem;
+    }
+}

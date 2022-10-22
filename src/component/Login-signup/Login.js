@@ -6,7 +6,12 @@ var validator = require("email-validator");
 
 
 
-function Login() {
+function Login(props) {
+    const changeLoggedInState = (value) => {
+        props.checkLoggedIn(value)
+    }
+
+
     const navigate = useNavigate()
     const [IsRight, setIsRight] = useState(true)
     const [username, setusername] = useState("");
@@ -17,18 +22,22 @@ function Login() {
     const users = [{ username: "test@gmail.com", password: "testpassword" }];
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(validator.validate(username));
+
         if (validator.validate(username)) {
             const account = users.find((user) => user.username === username);
             if (account && account.password === password) {
                 localStorage.setItem("authenticated", true);
-                setauthenticated(true)
+                setauthenticated(true);
                 navigate("/dashboard");
+                changeLoggedInState(true)
+
+
 
             }
             else {
                 localStorage.setItem("authenticated", false);
                 setIsRight(false)
+                changeLoggedInState(false)
 
             }
         }
