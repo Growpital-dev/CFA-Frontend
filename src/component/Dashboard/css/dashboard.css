@@ -102,11 +102,11 @@
     }
 
     .dashboard-card-inner {
-        width: 50vw;
+        width: 75vw;
     }
 
     .dashboard-card-inner img {
-        height: 40vw;
+        height: 50vw;
         margin-top: -15vw;
     }
 

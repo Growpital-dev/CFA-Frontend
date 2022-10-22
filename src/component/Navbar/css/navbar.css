@@ -66,6 +66,7 @@ body {
 .nav-logo img {
     width: auto;
     height: 2.5rem;
+
 }
 
 
@@ -73,6 +74,7 @@ body {
     display: flex;
     /* justify-content: space-between; */
     list-style-type: none;
+    margin-bottom: 0rem;
 
 
 }
@@ -131,7 +133,7 @@ body {
     display: none;
     position: fixed;
     height: 100vh;
-    width: 110vw;
+    width: 100vw;
     top: 0;
     background-color: var(--darkBackground);
     transition: 0.3s all ease-in-out;
@@ -154,12 +156,12 @@ body {
     display: block;
     margin: 1rem;
 
-
 }
 
 .mobile-navlinks ul {
     margin-top: 3rem;
     list-style-type: none;
+    padding-left: 0;
 
 }
 
