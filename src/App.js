@@ -9,6 +9,7 @@ import FullContactUs from "./component/contactUs/fullContactUs";
 import NewInvestment from "./component/new_investment/NewInvestment";
 import Profile from "./component/Profile_page/Profile";
 import Protected from "./component/Protected/Protected";
+import Wallet from "./component/Wallet/Wallet";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,6 +42,11 @@ function App() {
           <Route path="profile" element={
             <Protected isLoggedIn={isLoggedIn}>
               <Profile />
+            </Protected>
+          } />
+          <Route path="wallet" element={
+            <Protected isLoggedIn={isLoggedIn}>
+              <Wallet />
             </Protected>
           } />
 
