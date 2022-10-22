@@ -6,7 +6,7 @@
 .walletContent {
     position: absolute;
     left: 2.5vw;
-    top: 10%;
+    top: 33%;
 
 
 }
@@ -54,18 +54,18 @@
     .wallet-add-money-btn,
     .wallet-withdraw-money-btn {
         padding: 2.3vw 3vw;
-        width: 42vw;
+        width: 37vw;
         margin-top: 2vw;
         font-size: 3vw;
     }
 
     .walletContent {
-        left: 5vw;
-        top: 14%;
+        left: 8vw;
+        top: 33%;
     }
 
     .amountComponent {
-        margin-top: 2rem;
+        margin-top: 0rem;
     }
 
 }
