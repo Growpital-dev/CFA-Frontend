@@ -1,45 +1,45 @@
 const transactions = [
     {
-        date: "12-03-2021",
-        time: "13:00 hrs",
+        type: "Withdraw",
+        time: "13:00",
         amount: "Rs.15000",
-        accountNo: 234567891262
+        status: "Completed"
     },
     {
-        date: "21-07-2021",
-        time: "08:00 hrs",
-        amount: "Rs.26000",
-        accountNo: 234567891262
+        type: "Deposit",
+        time: "15:00",
+        amount: "Rs.19000",
+        status: "Pending"
     },
     {
-        date: "08-04-2022",
-        time: "11:00 hrs",
-        amount: "Rs.33000",
-        accountNo: 234567891462
+        type: "Deposit",
+        time: "19:00",
+        amount: "Rs.20000",
+        status: "Failed"
     },
     {
-        date: "08-04-2022",
-        time: "11:00 hrs",
-        amount: "Rs.33000",
-        accountNo: 234567891462
+        type: "Withdraw",
+        time: "13:00",
+        amount: "Rs.15000",
+        status: "Completed"
     },
     {
-        date: "08-04-2022",
-        time: "11:00 hrs",
-        amount: "Rs.33000",
-        accountNo: 234567891462
+        type: "Withdraw",
+        time: "13:00",
+        amount: "Rs.15000",
+        status: "Completed"
     },
     {
-        date: "08-04-2022",
-        time: "11:00 hrs",
-        amount: "Rs.33000",
-        accountNo: 234567891462
+        type: "Withdraw",
+        time: "13:00",
+        amount: "Rs.15000",
+        status: "Completed"
     },
     {
-        date: "08-04-2022",
-        time: "11:00 hrs",
-        amount: "Rs.33000",
-        accountNo: 234567891462
+        type: "Withdraw",
+        time: "13:00",
+        amount: "Rs.15000",
+        status: "Completed"
     },
 ]
 

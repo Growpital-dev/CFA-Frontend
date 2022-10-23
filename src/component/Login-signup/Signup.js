@@ -14,19 +14,21 @@ function Signup() {
                 <p className='greet'>Hey!</p>
                 <div className="signup-component register-component">
                     <h1>Signup</h1>
-                    <div className="signup-input register-input">
-                        <label htmlFor="name">Name</label><br />
-                        <input type="text" required />
-                    </div>
-                    <div className="signup-input register-input">
-                        <label htmlFor="email">Email</label><br />
-                        <input type="email" required />
-                    </div>
-                    <div className="signup-input register-input">
-                        <label htmlFor="password">Password</label><br />
-                        <input type="password" required />
-                    </div>
-                    <button className='btn' id='btn-signup'>Signup</button>
+                    <form>
+                        <div className="signup-input register-input">
+                            <label htmlFor="name">Name</label><br />
+                            <input type="text" required />
+                        </div>
+                        <div className="signup-input register-input">
+                            <label htmlFor="email">Email</label><br />
+                            <input type="email" required />
+                        </div>
+                        <div className="signup-input register-input">
+                            <label htmlFor="password">Password</label><br />
+                            <input type="password" required />
+                        </div>
+                        <button className='btn' id='btn-signup'>Signup</button>
+                    </form>
                 </div>
                 <p className='logOrSign' onClick={() => {
                     navigate("/login")
