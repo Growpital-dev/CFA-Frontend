@@ -48,8 +48,8 @@
     height: 1.5rem;
     border-radius: 5px;
     color: orange;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
 }
 
 .contact-form textarea {
@@ -70,10 +70,11 @@
     background-color: white !important;
     height: 2.5rem !important;
     color: var(--Orange);
-    width: 42.5vw !important;
+    width: 100% !important;
     border: 2px solid var(--Orange) !important;
     transition: 0.3s all ease-in-out;
     cursor: pointer;
+    padding: 0 !important;
 }
 
 .contact-btn-submit:hover {
