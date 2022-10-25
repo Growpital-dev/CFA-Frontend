@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './css/wallet.css'
 import MainNavbar from '../Navbar/MainNavbar'
 import Amount from './Amount'
