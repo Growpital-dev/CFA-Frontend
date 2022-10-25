@@ -113,14 +113,30 @@ body {
     font-size: 1.3vw;
 }
 
-.nav-links li:hover {
-    background-color: var(--matteOrange);
-    color: white;
+.nav-links li:has(> a.active-nav-link) {
+    background-color: var(--matteOrange) !important;
+    color: white !important;
 }
 
-.active-nav-link {
+
+.nav-links li a {
+    color: var(--matteOrange);
+    text-decoration: none;
+}
+
+.nav-links li:hover {
     background-color: var(--matteOrange);
-    color: white;
+    color: white !important;
+}
+
+.nav-links li:hover a {
+    color: white !important;
+}
+
+
+.active-nav-link {
+    color: white !important;
+    text-decoration: none;
 }
 
 .hamburger {
