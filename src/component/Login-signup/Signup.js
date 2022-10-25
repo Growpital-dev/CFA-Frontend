@@ -27,7 +27,7 @@ function Signup() {
                             <label htmlFor="password">Password</label><br />
                             <input type="password" required />
                         </div>
-                        <button className='btn' id='btn-signup'>Signup</button>
+                        <button className='btn signupBtn' id='btn-signup'>Signup</button>
                     </form>
                 </div>
                 <p className='logOrSign' onClick={() => {

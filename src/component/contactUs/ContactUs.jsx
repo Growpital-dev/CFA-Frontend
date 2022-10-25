@@ -23,16 +23,19 @@ const ContactUs = () => {
                     <div>
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your name.."/>
-                    </div><br />
+                    </div>
+                    
 
                     <div>
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" name="email" required placeholder="Your email" />
-                    </div><br />
+                    </div>
+                    
                     <div>
                         <label htmlFor="message">Subject</label>
                         <textarea id="message" name="message" required placeholder="Write something.." style={ {height:"200px"}}></textarea>
-                    </div><br />
+                    </div>
+                    
 
                     <input type="submit" value="Submit" className='contact-btn-submit'/>
                 </form>
