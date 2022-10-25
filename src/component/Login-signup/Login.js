@@ -62,7 +62,7 @@ function Login(props) {
                             <input type="password" value={password} id='login-password' required onChange={(e) => setpassword(e.target.value)} />
                             <span id='incorrect-creds' style={{ display: IsRight ? 'none' : 'block' }}>Email id or password is incorrect</span>
                         </div>
-                        <input className='btn' id='btn-login' value="Submit" type="submit" />
+                        <input className='btn login-Btn' id='btn-login' value="Login" type="submit" />
                     </form>
                 </div>
                 <p className='logOrSign' onClick={() => {

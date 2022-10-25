@@ -283,6 +283,10 @@
         max-width: 100% !important;
     }
 
+    .contact-form input {
+        height: 3rem !important;
+    }
+
     .contact-btn-submit {
         width: 102% !important;
     }
