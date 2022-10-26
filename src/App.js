@@ -12,8 +12,15 @@ import Protected from "./component/Protected/Protected";
 import Wallet from "./component/Wallet/Wallet";
 import MyInvestment from "./component/MyInvestment/MyInvestment";
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(window.location);
+  // }, [window.location])
+
+
 
   return (
     <div className="App">

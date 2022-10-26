@@ -1,67 +1,114 @@
-.container{
-    display: flex;
+.withdrawal-modal-container,
+.addMoney-modal-container {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.364);
+    display: none;
     flex-direction: column;
     justify-content: center;
-    border-radius: 15px;
-    padding: 20px 25px;
-    width: 22rem;
-    background-color: #353535;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
 }
-label{
+
+.close-withdraw-modal,
+.close-addMoney-modal {
+    height: 2rem;
+    /* width: 20px; */
+    align-self: flex-end;
+    margin-right: -2rem;
+    cursor: pointer;
+}
+
+.withdrawal-modal,
+.addMoney-modal {
+    background-color: var(--darkBackground);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+}
+
+label {
     font-size: 18px;
     padding-bottom: 0.6rem;
     color: white;
     font-family: 'Segoe UI';
 }
-input{
+
+input {
     margin-bottom: 0.6rem;
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 25px;
     font-family: 'Segoe UI';
     color: white;
 }
-.btn{
+
+.withdrawal-money-modal-btn {
     margin-top: 0.8rem;
-    border-radius: 18px;
+    border-radius: 10px;
     font-weight: 600;
     color: #FFA217;
     border: 3px solid #FFA217;
 }
-.top{
+
+.top {
     display: flex;
     flex-direction: column-reverse;
 }
-.close{
-    width: 20px;
-    align-self: flex-end;
-}
-.accountInput{
+
+
+
+.accountInput {
     display: flex;
 }
-.lock{
+
+.lock {
     position: fixed;
     width: 35px;
     padding: 3px 4px;
     cursor: pointer;
 }
-@media only screen and (max-width: 400px){
-    .container{
+
+@media only screen and (max-width: 400px) {
+    .container {
         padding: 16px 20px;
-    width: 18rem;
+        width: 18rem;
     }
-    label{
+
+    label {
         font-size: 16px;
         padding-bottom: 0.2rem;
     }
-    input{
+
+    input {
         margin-bottom: 0.2rem;
     }
 }
-@media only screen and (max-width: 305px){
-    .container{
+
+@media only screen and (max-width: 305px) {
+    .container {
         padding: 16px 20px;
-    width: 15rem;
+        width: 15rem;
     }
+}
+
+.addMoney-btn,
+.withdrawal-money-modal-btn {
+    background-color: white !important;
+    border: 2px solid var(--Orange) !important;
+    color: var(--Orange) !important;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.addMoney-btn:hover,
+.withdrawal-money-modal-btn:hover {
+    background-color: var(--Orange) !important;
+    color: white !important;
 }
