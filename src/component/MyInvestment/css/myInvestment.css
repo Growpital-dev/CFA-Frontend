@@ -1,0 +1,28 @@
+.myInvestment-container{
+    background-color: #353535;
+}
+.greeting{
+    color: white;
+    width: 15rem;
+    font-size: 22px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+}
+.upperContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 10px;
+}
+.total{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+@media only screen and (max-width: 800px){
+    .total{
+        flex-wrap: wrap;
+    }
+}

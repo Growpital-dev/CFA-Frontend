@@ -10,6 +10,7 @@ import NewInvestment from "./component/new_investment/NewInvestment";
 import Profile from "./component/Profile_page/Profile";
 import Protected from "./component/Protected/Protected";
 import Wallet from "./component/Wallet/Wallet";
+import MyInvestment from "./component/MyInvestment/MyInvestment";
 
 
 function App() {
@@ -56,7 +57,11 @@ function App() {
               <Wallet />
             </Protected>
           } />
-
+          <Route path="myInvestment" element={
+            <Protected isLoggedIn={isLoggedIn}>
+              <MyInvestment />
+            </Protected>
+          } />
         </Routes>
       </BrowserRouter>
     </div>
