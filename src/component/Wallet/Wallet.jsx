@@ -1,15 +1,40 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import './css/wallet.css'
 import MainNavbar from '../Navbar/MainNavbar'
 import Amount from './Amount'
 import Transactions from './Transactions'
 import Withdrawal from './Withdrawal'
 import AddMoney from './AddMoney'
+import { ProgressBar } from  'react-loader-spinner'
+
 
 
 const Wallet = () => {
+
+    const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
+
+
     return(
-        <>
+       <div>
+         {loading ? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>):(<>
         <MainNavbar />
         <div className="walletContainer">
             <Withdrawal/>
@@ -28,7 +53,8 @@ const Wallet = () => {
         </div>
         
        
-        </>
+        </>)}
+       </div>
     )
 }
 
