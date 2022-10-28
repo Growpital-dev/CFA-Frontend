@@ -1,16 +1,38 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import './css/myInvestment.css'
 import MainNavbar from '../Navbar/MainNavbar'
 import InvestMore from "./InvestMore";
 import TotalInvestment from "./TotalInvestment";
 import TotalProfit from "./TotalProfit";
-import ActiveInvestments from "./ActiveInvestments";
-import CompletedInvestments from "./CompletedInvestments";
+import { ProgressBar } from  'react-loader-spinner';
 
-const myInvestment = () => {
+
+const MyInvestment = () => {
+    const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
+
+
     return(
         <>
-        <MainNavbar />
+       {
+        loading? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>): (<>
+             <MainNavbar />
         <div className="myInvestment-container">
             <div className="upperContainer">
             <p className="greeting">Hey there! You can find about your investment here.</p>
@@ -22,8 +44,10 @@ const myInvestment = () => {
             </div>
             
         </div>
+            </>)
+       }
         </>
     )
 }
 
-export default myInvestment;
+export default MyInvestment;

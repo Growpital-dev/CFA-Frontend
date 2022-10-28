@@ -1,9 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import MainNavbar from '../Navbar/MainNavbar'
 import './css/profile.css'
 import close from "../../images/close.svg"
+import { ProgressBar } from  'react-loader-spinner'
+
+
 
 const Profile = () => {
+    const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
+
+
     const user_data = {
         email: "abc@gmail.com",
         name: "Jhon Doe",
@@ -23,8 +37,20 @@ const Profile = () => {
         edit_avatar.style.backgroundImage="url("+src+")"
 
     }
+
   return (
-    <>
+   <div>
+    {loading ? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>): ( <>
     <MainNavbar/>
     <div className='profile-sec'>
         <div className="edit-profile-sec" style={IsEditProfileOpen?  {display:"flex"}: {display:"none"}} >
@@ -134,7 +160,8 @@ const Profile = () => {
             </div>
         </div>
     </div>
-    </>
+    </>)}
+   </div>
   )
 }
 

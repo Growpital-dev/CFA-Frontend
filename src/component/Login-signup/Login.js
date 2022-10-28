@@ -1,34 +1,43 @@
 import React, { useState } from 'react'
 import './css/Register.css';
 import NavRegister from './NavRegister'
+import userCredentials from '../../userCredentials/userCredentials';
 import { useNavigate } from "react-router-dom";
 var validator = require("email-validator");
 
 
 
+
 function Login(props) {
+
     const changeLoggedInState = (value) => {
         props.checkLoggedIn(value)
     }
 
 
     const navigate = useNavigate()
+
     const [IsRight, setIsRight] = useState(true)
-    const [username, setusername] = useState("");
+    const [userMail, setuserMail] = useState("");
     const [password, setpassword] = useState("");
 
     // eslint-disable-next-line no-unused-vars
     const [authenticated, setauthenticated] = useState((localStorage.getItem("authenticated") || false));
-    const users = [{ username: "test@gmail.com", password: "testpassword" }];
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (validator.validate(username)) {
-            const account = users.find((user) => user.username === username);
+        if (validator.validate(userMail)) {
+            const account = userCredentials.find((user) => user.userMail === userMail);
             if (account && account.password === password) {
                 localStorage.setItem("authenticated", true);
                 setauthenticated(true);
-                navigate("/dashboard");
+                if (account.isVerified) {
+                    navigate("/dashboard");
+                }
+                else {
+                    navigate("/profileVerification");
+                }
                 changeLoggedInState(true)
 
 
@@ -54,8 +63,8 @@ function Login(props) {
                     <form onSubmit={handleSubmit}>
                         <div className="login-input register-input">
                             <label htmlFor="email">Email</label><br />
-                            <input type="email" id='login-email' required value={username}
-                                onChange={(e) => setusername(e.target.value)} />
+                            <input type="email" id='login-email' required value={userMail}
+                                onChange={(e) => setuserMail(e.target.value)} />
                         </div>
                         <div className="login-input register-input">
                             <label htmlFor="password">Password</label><br />

@@ -10,6 +10,7 @@ import NewInvestment from "./component/new_investment/NewInvestment";
 import Profile from "./component/Profile_page/Profile";
 import Protected from "./component/Protected/Protected";
 import Wallet from "./component/Wallet/Wallet";
+import ProfileVerification from "./component/ProfileVerification/ProfileVerification";
 import MyInvestment from "./component/MyInvestment/MyInvestment";
 
 
@@ -57,11 +58,19 @@ function App() {
               <Wallet />
             </Protected>
           } />
-          <Route path="myInvestment" element={
+
+          <Route path="profileVerification" element={
+            <Protected isLoggedIn={isLoggedIn}>
+              <ProfileVerification />
+            </Protected>
+          } />
+
+          <Route path="myInvestments" element={
             <Protected isLoggedIn={isLoggedIn}>
               <MyInvestment />
             </Protected>
           } />
+
         </Routes>
       </BrowserRouter>
     </div>

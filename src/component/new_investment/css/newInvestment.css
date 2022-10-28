@@ -38,6 +38,14 @@
 
 }
 
+.investment-plan form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: default;
+}
+
 .investment-plan h1 {
     color: var(--matteOrange);
     font-size: 2rem;

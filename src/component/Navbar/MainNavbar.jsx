@@ -9,17 +9,6 @@ const MainNavbar = () => {
     const[IsnavOpen, setIsnavOpen]=useState(false);
     
     const navigate = useNavigate()
-
-//     const setActiveLink = (e) => {
-//     const navLinks= document.getElementsByClassName("nav-link")
-//     // console.log(navLinks);
-//     for(let i=0; i<navLinks.length; i++){
-//         navLinks[i].addEventListener('click', (e)=>{
-//             console.log(e.target)
-//         })
-//     }
-//   }
-//   setActiveLink()
   
   return (
     <div>
@@ -28,7 +17,7 @@ const MainNavbar = () => {
             <ul>
                     <li onClick={()=>{navigate("/dashboard");setIsnavOpen(false)}}>Dashboard</li>
                     <li onClick={()=>{navigate("/newInvestment");setIsnavOpen(false)}}>New Investment</li>
-                    <li>My Investments</li>
+                    <li onClick={()=>{navigate("/myInvestments");setIsnavOpen(false)}}>My Investments</li>
                     <li onClick={()=>{navigate("/wallet");setIsnavOpen(false)}}>Wallet</li>
                     <li onClick={()=>{navigate("/contactUs");setIsnavOpen(false)}}>Contact Us</li>
                     <li onClick={()=>{navigate("/profile");setIsnavOpen(false)}}>Profile</li>
@@ -46,7 +35,7 @@ const MainNavbar = () => {
                     <li className="nav-link">
                         <NavLink className={({isActive})=> isActive? "active-nav-link": ""} to="/newInvestment">New Investment</NavLink> 
                     </li>
-                    <li><NavLink className={({isActive})=> isActive? "active-nav-link": ""} to=" " onClick={(e)=>e.preventDefault()}>My Investments</NavLink></li>
+                    <li><NavLink className={({isActive})=> isActive? "active-nav-link": ""} to="/myInvestments">My Investments</NavLink></li>
                     <li className="nav-link">
                         <NavLink className={({isActive})=> isActive? "active-nav-link": ""} to="/wallet">Wallet</NavLink> 
                     </li>

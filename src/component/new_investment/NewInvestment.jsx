@@ -1,14 +1,40 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import "./css/newInvestment.css"
 import MainNavbar from '../Navbar/MainNavbar'
-import plans from "../../PlansData/plansData"
+import { ProgressBar } from  'react-loader-spinner'
+import PlanCards from './Plan_cards'
+import Payment from '../Payment/Payment'
 
 const NewInvestment = () => {
     // eslint-disable-next-line no-unused-vars
     const [IsPlanSelected, setIsPlanSelected] = useState(false)
+    const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+
+   
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
+
+
   return (
-    <>
-    <MainNavbar/>
+    <div>
+        {loading ? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>): (
+            <>
+            <MainNavbar/>
     <div className="new-investment-sec">
         <h1 className='new-investment-heading'>
             Hey USERNAME,<br />
@@ -18,26 +44,16 @@ const NewInvestment = () => {
             <p className='landing-para landing-plan-para'>We Currently have three plans avialable  <br />
             Choose wisely as per your needs and investment capacity</p><br />
             <div className="investment-plans">
-                {plans.map((plan, index)=>{
-                    return(
-                        <div className="investment-plan" key={index} >
-                            <h1>{plan.plan_name}</h1><br />
-                          {plan.min_limit !== ""?  <p>Deposit ₹ {plan.min_limit} - ₹{plan.max_limit} </p>: <p>Deposit ₹{plan.max_limit} </p>}
-                            <br /><p>Lock-in Period {plan.lockin_period}</p><br />
-                            <p>Rate of Interest {plan.ROI} p.a.</p><br />
-                            <p>{plan.maturity_period} maturity period</p>
-                            <button className='select-plan-btn' value={plan.plan_name} onClick={(e)=>{
-                                // console.log(e.target.value);
-                            }}>Select</button>
-                        </div>
-                    )
-                })}
+                <PlanCards/>
             </div>
         </div>
         
     </div>
-    </>
-  )
-}
+            </>
+        )}
+        <Payment/>
+    </div>
+  )}
+    
 
-export default NewInvestment
+export default NewInvestment;

@@ -1,10 +1,10 @@
-import React from 'react'
-// import { useNavigate } from "react-router-dom";
+import React,{useEffect, useState} from 'react'
 import MainNavbar from '../Navbar/MainNavbar';
 import "./css/dashboard.css"
 import girlBudget from "../../images/girlBudget.png"
 import businessMan from "../../images/businessMan.png"
 import cashCoin from "../../images/cashCoin.png"
+import { ProgressBar } from  'react-loader-spinner'
 
 
 
@@ -26,11 +26,32 @@ const Dasboard = () => {
       cardImg: businessMan
     }
   ]
-  // const navigate = useNavigate()
+
+  const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
+
+
   
 return (
+  
       <div>
-        <MainNavbar/>
+        {loading ? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>) : (<><MainNavbar/>
         <div className="dashboard">
           <div className="dashboard-header">
             <h1>
@@ -57,7 +78,8 @@ return (
           </div>
 
         </div>
-        </div>
+        </div></>)}
+        
       </div>
     );
   }

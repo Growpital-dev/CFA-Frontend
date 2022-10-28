@@ -19,7 +19,7 @@ const ContactUs = () => {
                 <img src={headphoneBoy} alt="" className='headphone-boy' />
             </div>
             <div className='form-container'>
-                <form action="" onClick={handleSubmit} className="contact-form">
+                <form action="https://formsubmit.co/abhishekrawat9956088862@gmail.com" method="POST" onClick={handleSubmit} className="contact-form">
                     <div>
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your name.."/>
