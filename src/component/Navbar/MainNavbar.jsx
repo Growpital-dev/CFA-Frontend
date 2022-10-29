@@ -45,6 +45,10 @@ const MainNavbar = () => {
                     <li className='profile-link nav-link'>
                         <NavLink className={({isActive})=> isActive? "active-nav-link": ""} to="/profile">Jhon Doe</NavLink>
                     </li>
+
+                    <li onClick={()=>{localStorage.clear("token")}}>logout</li>
+                    <li onClick={()=>{console.log(localStorage.getItem("token"))}}>print</li>
+
                 </ul>
             </div>
             <div className="hamburger">

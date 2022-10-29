@@ -6,7 +6,7 @@ import { ProgressBar } from  'react-loader-spinner'
 
 
 
-const Profile = () => {
+const Profile = ({signupDetails,setsignupDetails}) => {
     const [loading, setLoading] = useState(false)
 
   useEffect(()=>{
