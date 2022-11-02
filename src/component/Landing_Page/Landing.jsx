@@ -1,20 +1,38 @@
-import React from 'react'
-import LandingNavbar from '../Navbar/Landing_navbar';
+import React,{useState,useEffect} from 'react'
 import './css/landing.css';
 import backVideo from '../../images/backVideo.mp4'
 import { useNavigate } from 'react-router-dom';
 import easyWallet from '../../images/easyWallet.png'
 import businessGirl from '../../images/businessGirl.png'
 import plans from "../../PlansData/plansData"
+import { ProgressBar } from  'react-loader-spinner'
 import ContactUs from '../contactUs/ContactUs';
 
-const Landing = () => {
+const Landing = ({isLoggedIn,setIsLoggedIn}) => {
+   
     const navigate = useNavigate()
+     const [isLoading, setIsLoading]= useState(false)
+    
+ 
+
+    
 
   return (
     <div>
-        <LandingNavbar/>
-        <section className='hero-section'>
+        {
+            isLoading ? (<div className="loader">
+          <ProgressBar
+            height="80"
+            width="80"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="progress-bar-wrapper"
+            borderColor = '#FFA217'
+            barColor = '#CCA15F'
+          />
+        </div>):
+             (<>
+             <section className='hero-section'>
             <div className="hero-text">
                 <div>
                     <h1>Invest and Grow With Us</h1><br />
@@ -83,7 +101,8 @@ const Landing = () => {
         <section className="landing-contact">
             <ContactUs/>
         </section>
-
+             </>)
+        }
     </div>
   )
 }
