@@ -1,23 +1,24 @@
 import React,{useState,useEffect} from 'react'
-import MainNavbar from '../Navbar/MainNavbar'
 import ContactUs from './ContactUs'
 import { ProgressBar } from  'react-loader-spinner'
 
 
 const FullContactUs = () => {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading]= useState(false)
+ 
 
   useEffect(()=>{
-    setLoading(true)
+    setIsLoading(true)
 
     setTimeout(() => {
-      setLoading(false)
+      setIsLoading(false)
     }, 2000);
   }, [])
 
   return (
     <div>
-      {loading? (<div className="loader">
+      {
+        isLoading ? (<div className="loader">
           <ProgressBar
             height="80"
             width="80"
@@ -27,10 +28,9 @@ const FullContactUs = () => {
             borderColor = '#FFA217'
             barColor = '#CCA15F'
           />
-        </div>): (<>
-    <MainNavbar/>
-    <ContactUs/>
-    </>)}
+        </div>): (<ContactUs/>)
+      }
+    
     </div>
   )
 }

@@ -9,6 +9,58 @@ body {
 
 }
 
+.mobile-logout {
+    background-color: white;
+    margin: auto;
+    width: fit-content;
+    padding: 0.5rem 1rem !important;
+
+}
+
+#dropdown-basic {
+    display: flex;
+    background: transparent !important;
+    color: var(--matteOrange);
+    align-items: center;
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+}
+
+#dropdown-basic:hover {
+    color: white;
+    background-color: var(--matteOrange) !important;
+}
+
+.dropdown-item {
+    background-color: white;
+    color: var(--matteOrange);
+}
+
+
+.dropdown-link {
+    /* color: var(--matteOrange) !important; */
+}
+
+a#dropdown-link a {
+    color: var(--matteOrange) !important;
+    text-decoration: none;
+}
+
+a#dropdown-link {
+    background-color: white;
+
+}
+
+a#dropdown-link:hover {
+    background-color: var(--matteOrange);
+}
+
+a#dropdown-link:hover a {
+    color: white !important;
+}
+
+
 .landing-nav nav img {
     width: auto;
     height: 2.5rem;
@@ -27,7 +79,7 @@ body {
     border: 1px solid var(--Orange);
     background-color: transparent;
     padding: 0.4rem 0.6rem;
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
 }
@@ -40,8 +92,8 @@ body {
 }
 
 .login-btn:hover {
-    background-color: white;
-    color: var(--Orange);
+    background-color: white !important;
+    color: var(--Orange) !important;
 }
 
 .signup-btn {
@@ -52,8 +104,8 @@ body {
 }
 
 .signup-btn:hover {
-    background-color: var(--Orange);
-    color: white;
+    background-color: var(--Orange) !important;
+    color: white !important;
 }
 
 .main-navbar {
@@ -103,11 +155,11 @@ body {
 .nav-links li {
     color: var(--matteOrange);
     font-weight: 500;
-    padding: 0.3rem 0.8rem;
+    padding: 0rem 0.8rem;
     border-radius: 10px;
     align-items: center;
     display: flex;
-    margin-right: 1.5vw;
+    margin-right: 2vw;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
     font-size: 1.3vw;
@@ -119,18 +171,20 @@ body {
 }
 
 
-.nav-links li a {
+.nav-links li a#nav-link-a {
     color: var(--matteOrange);
     text-decoration: none;
+    transition: 0.4s all ease-in-out;
 }
 
-.nav-links li:hover {
+.nav-links li.nav-link:hover {
     background-color: var(--matteOrange);
     color: white !important;
 }
 
-.nav-links li:hover a {
+.nav-links li:hover a#nav-link-a {
     color: white !important;
+    background-color: var(--matteOrange);
 }
 
 
@@ -140,15 +194,20 @@ body {
 }
 
 .hamburger {
-    margin-right: 3rem;
+    margin-right: 0rem;
     padding: 0.2rem 0.4rem;
-    background-color: var(--darkBlue);
     border-radius: 10px;
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+.button-grp-mobile {
     display: none;
 }
 
 .mobile-navlinks {
-    z-index: 1000000000000000;
+    z-index: 100;
     display: none;
     position: fixed;
     height: 100vh;
@@ -174,6 +233,7 @@ body {
     height: 2rem;
     display: block;
     margin: 1rem;
+    cursor: pointer;
 
 }
 
@@ -186,6 +246,7 @@ body {
 
 .mobile-navlinks ul li {
     color: var(--Orange);
+    cursor: pointer;
     margin-bottom: 1rem;
     padding: 0.5rem 0;
     font-weight: bold;
@@ -196,6 +257,9 @@ body {
 }
 
 @media screen and (max-width:770px) {
+    .button-grp-mobile {
+        display: block;
+    }
 
 
     .mobile-navlinks {
