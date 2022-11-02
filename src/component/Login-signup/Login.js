@@ -3,17 +3,19 @@ import './css/Register.css';
 import NavRegister from './NavRegister'
 import userCredentials from '../../userCredentials/userCredentials';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 var validator = require("email-validator");
 
 
 
 
-function Login(props) {
+function Login({isLoggedIn, setIsLoggedIn}) {
 
-    const changeLoggedInState = (value) => {
-        props.checkLoggedIn(value)
-    }
+    // const changeLoggedInState = (value) => {
+       
+    // }
 
+    const url = 'https://growpital.herokuapp.com/auth/login';
 
     const navigate = useNavigate()
 
@@ -22,45 +24,47 @@ function Login(props) {
     const [password, setpassword] = useState("");
 
     // eslint-disable-next-line no-unused-vars
-    const [authenticated, setauthenticated] = useState((localStorage.getItem("authenticated") || false));
+    // const [authenticated, setauthenticated] = useState((localStorage.getItem("authenticated") || false));
 
     const handleSubmit = (e) => {
+
         e.preventDefault();
+        // if email and password is present
+        console.log("clicked");
 
-        if (validator.validate(userMail)) {
-            const account = userCredentials.find((user) => user.userMail === userMail);
-            if (account && account.password === password) {
-                localStorage.setItem("authenticated", true);
-                setauthenticated(true);
-                if (account.isVerified) {
-                    navigate("/dashboard");
-                }
-                else {
-                    navigate("/profileVerification");
-                }
-                changeLoggedInState(true)
+            if (validator.validate(userMail)) {
+                axios.post(url, {
+                    Email: userMail,
+                    Password: password
+                })
+                    .then((response) => {
+                        console.log(response.data.token);
+                        setIsLoggedIn(true)
+                        localStorage.setItem("token",response.data.token)
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                        setIsLoggedIn(false)
 
+                        alert("some error occured")
+                    })
 
-
+            }else{
+                alert("Invalid email")
             }
-            else {
-                localStorage.setItem("authenticated", false);
-                setIsRight(false)
-                changeLoggedInState(false)
 
-            }
-        }
+        
     };
     return (
         <>
-            <nav>
+            {/* <nav>
                 <NavRegister />
-            </nav>
+            </nav> */}
             <div className='login register'>
                 <p className="greet">Welcome Back!</p>
                 <div className="login-component register-component">
                     <h1>Login</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={(e) => { handleSubmit(e) }} >
                         <div className="login-input register-input">
                             <label htmlFor="email">Email</label><br />
                             <input type="email" id='login-email' required value={userMail}

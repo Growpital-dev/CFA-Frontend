@@ -1,51 +1,70 @@
 import React, { useState } from 'react';
 import './css/Register.css';
 import NavRegister from './NavRegister';
-import { useNavigate } from "react-router-dom";
-import userCredentials from '../../userCredentials/userCredentials';
+import { Navigate, useNavigate } from "react-router-dom";
+import axios from 'axios';
+var validator = require("email-validator")
+// import userCredentials from '../../userCredentials/userCredentials';
 
 
-function Signup() {
+function Signup({signupDetails,setsignupDetails}) {
     const navigate = useNavigate()
-    const [userName, setuserName] = useState("")
-    const [userMail, setuserMail] = useState('')
-    const [userPassword, setuserPassword] = useState('')
 
+    const handleChange = e => {
+        const { name, value } = e.target
+
+        setsignupDetails({
+            ...signupDetails,//spread operator 
+            [name]: value
+        })
+    }
+
+  
+    const url = 'https://growpital.herokuapp.com/auth/signup';
 
 
 
     const submitSignupForm = (e) => {
-        const userEntry = { userName: userName, userMail: userMail, password: userPassword, isVerified: false }
+    
         e.preventDefault();
-        userCredentials.push(userEntry);
-        navigate("/login")
+        console.log(signupDetails.Email);
+            if (validator.validate(signupDetails.Email)) {
+                navigate("/profileVerification")
+            }else{
+                alert("valid email required")
+            }
+
+       
+
+
+        // navigate("/login")
     }
     return (
         <>
-            <nav>
+            {/* <nav>
                 <NavRegister />
-            </nav>
+            </nav> */}
             <div className='signup register'>
                 <p className='greet'>Hey!</p>
                 <div className="signup-component register-component">
                     <h1>Signup</h1>
-                    <form className='signup-form'>
-                        <div className="signup-input register-input">
+                    <form className='signup-form' onSubmit={(e) => { submitSignupForm(e) }}>
+                        {/* <div className="signup-input register-input">
                             <label htmlFor="name">Name</label><br />
                             <input type="text" required value={userName}
                                 onChange={(e) => setuserName(e.target.value)} />
+                        </div> */}
+                        <div className="signup-input register-input">
+                            <label htmlFor="Email">Email</label><br />
+                            <input name='Email' type="email"  required value={signupDetails.Email||""}
+                                onChange={handleChange} />
                         </div>
                         <div className="signup-input register-input">
-                            <label htmlFor="email">Email</label><br />
-                            <input type="email" required value={userMail}
-                                onChange={(e) => setuserMail(e.target.value)} />
+                            <label htmlFor="Password">Password</label><br />
+                            <input name='Password' type="password" required value={signupDetails.Password||""}
+                                onChange={ handleChange} />
                         </div>
-                        <div className="signup-input register-input">
-                            <label htmlFor="password">Password</label><br />
-                            <input type="password" required value={userPassword}
-                                onChange={(e) => setuserPassword(e.target.value)} />
-                        </div>
-                        <button className='btn signupBtn' id='btn-signup' type='submit' onClick={submitSignupForm}>Signup</button>
+                        <input className='btn signupBtn' id='btn-signup' value="submit" type='submit'/>
                     </form>
                 </div>
                 <p className='logOrSign' onClick={() => {
